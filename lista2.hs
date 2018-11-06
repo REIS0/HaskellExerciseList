@@ -1,8 +1,8 @@
 import Data.List
 import System.IO
 
-checkPali :: [a] -> String
+checkPali :: (Eq a) => [a] -> String
 checkPali array =
-	let revArray = reverse array in revArray
-		    | array == revArray = "palindromo"
-			| otherwise         = "nao e palindromo"
+	if array == reverse array
+		then "palindromo"
+		else "nao e palindromo"
